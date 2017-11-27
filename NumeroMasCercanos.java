@@ -46,7 +46,6 @@ public class NumeroMasCercanos {
             if(candidato == 0) fin = true;
         }
         Collections.sort(sobrantes);
-        utilidades.imprimeArray(sobrantes);
         int diferencia = Integer.MAX_VALUE;
         int numero1 = 0, numero2 = 0;
         int pos = 0;
@@ -62,10 +61,7 @@ public class NumeroMasCercanos {
         solucion2.add(numero2);
         sobrantes.remove(pos);
         sobrantes.remove(pos);
-        System.out.println("*/TRAAAZAAAAAAAA*/");
         int mitad = (sobrantes.size()/2);
-        System.out.println(mitad);
-        System.out.println("*/TRAAAZAAAAAAAA*/");
         for(int i = 0; i < mitad; i++){
             solucion1.add(sobrantes.get(i));
         }
@@ -75,11 +71,10 @@ public class NumeroMasCercanos {
         }
         sobrantes.clear();
         utilidades.imprimeArray(conjuntoNumeros);
-        utilidades.imprimeArray(solucion1);
-        utilidades.imprimeArray(solucion2);
-
-
-        utilidades.imprimeArray(sobrantes);
+        for(int i = 0; i < solucion1.size(); i++){
+            sol[0] = sol[0] * 10 + solucion1.get(i);
+            sol[1] = sol[1] * 10 + solucion2.get(i);
+        }
         return sol;
 
     }
